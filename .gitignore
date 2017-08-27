@@ -1,1 +1,6 @@
 .idea
+blog/__pycache__/
+blog/migrations/__pycache__/
+bookmark/__pycache__/
+bookmark/migrations/__pycache__/
+mysite/__pycache__/
