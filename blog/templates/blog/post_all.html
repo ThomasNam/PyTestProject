@@ -1,0 +1,26 @@
+<h1>Blog List</h1>
+
+{{ posts }}
+{% for post in object_list %}
+
+    <h2><A href = '{{ post.get_absolute_url }}'>{{ post.title }}</A></h2>
+    {{ post.modify_date|date:"N d, Y" }}
+    <p>{{ post.description }}</p>
+
+{% endfor %}
+
+<br>
+
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+            <a href = "?page={{ page_obj.previous_page_number }}">Prev</a>
+        {% endif %}
+
+    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+    {% if page_obj.has_next %}
+        <a href = "?page={{ page_obj.paginator.next_page_number }}">Next</a>
+    {% endif %}
+    </span>
+</div>
