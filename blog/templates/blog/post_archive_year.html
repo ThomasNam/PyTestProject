@@ -1,0 +1,29 @@
+{% load l10n %}
+
+<h1>Post Archives for {{  year|date:'Y' }}</h1>
+
+<ul>
+    {% for date in date_list %}
+
+        <li style="'display:inline'">
+        {% localize  on %}
+            <A href = "{% url 'blog:post_month_archive' year|date:'Y' date|date:'m' %}">{{ date|date:"F" }}</A>
+        {% endlocalize %}
+        </li>
+
+    {% endfor %}
+</ul>
+
+<Br>
+
+<div>
+    <ul>
+        {% for post in object_list %}
+
+            <li>
+                <A href = "{{  post.get_absolute_url }}"><strong>{{ post.title }}</strong></A>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>

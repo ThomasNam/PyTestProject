@@ -15,10 +15,10 @@ urlpatterns = [
     url(r'^(?P<year>\d{4})/$', PostYAV.as_view(), name='post_year_archive'),
 
     # /2012/nov/
-    url(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/$', PostMAV.as_view(), name='post_month_archive'),
+    url(r'^(?P<year>\d{4})/(?P<month>[0-9]+)/$', PostMAV.as_view(), name='post_month_archive'),
 
     # /2012/nov/10
-    url(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{1,2})/$', PostDAV.as_view(), name='post_day_archive'),
+    url(r'^(?P<year>\d{4})/(?P<month>[0-9]+)/(?P<day>\d{1,2})/$', PostDAV.as_view(), name='post_day_archive'),
 
     # /today/
     url(r'^today/$', PostTAV.as_view(), name='post_today_archive'),
