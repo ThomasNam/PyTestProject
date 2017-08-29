@@ -1,4 +1,12 @@
-{% load l10n %}
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div id = 'content'>
 
 <h1>Post Archives for {{  year|date:'Y' }}</h1>
 
@@ -27,3 +35,7 @@
         {% endfor %}
     </ul>
 </div>
+
+</div>
+
+{% endblock %}

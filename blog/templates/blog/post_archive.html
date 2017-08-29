@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <div id = 'content'>
+
 <h1>Post archives until {% now "N d, Y" %}</h1>
 
 <ul>
@@ -22,3 +32,7 @@
         {% endfor %}
     </ul>
 </div>
+
+    </div>
+
+{% endblock %}

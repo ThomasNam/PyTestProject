@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "base.html" %}
 
-    </head>
+{% block title %}Bookmark{% endblock %}
 
-    <body>
+{% load staticfiles %}
+
+{% block content %}
 
         <div id = 'content'>
 
@@ -14,7 +14,7 @@
 
                 {% for bookmark in object_list %}
 
-                    <li><a href = "{% url 'detail' bookmark.id %}">{{ bookmark}}</a></li>
+                    <li><a href = "{% url 'bookmark:detail' bookmark.id %}">{{ bookmark}}</a></li>
 
                 {% endfor %}
 
@@ -22,5 +22,4 @@
 
         </div>
 
-    </body>
-</html>
+{% endblock %}

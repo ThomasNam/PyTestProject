@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <div id = 'content'>
+
 <h1>Blog List</h1>
 
 {{ posts }}
@@ -24,3 +34,7 @@
     {% endif %}
     </span>
 </div>
+
+    </div>
+
+{% endblock %}
