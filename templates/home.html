@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+        <div id = 'content_home'>
+
+            <div id = 'homeimg'>
+                <a href = "/"><img src="{% static 'img/m197_01.jpg' %}" style="height: 256px"/></a>
+                <h4 style = "margin:0">This is Django powered web site.</h4>
+            </div>
+
+        <hr style="margin: 5px 0;">
+
+        <h2>Select Application</h2>
+
+        <table id = 'applist'>
+            <tbody>
+            <Tr>
+                <td>
+                    <b><i><a Href = "">Bookmark</a></i></b>
+                </td>
+                <td>우짜리</td>
+                <td class = 'edit'><i><a href = "#">Add</a></i></td>
+                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+            </Tr>
+            <Tr>
+                <td>
+                    <b><i><a Href = "">Blog</a></i></b>
+                </td>
+                <td>우짜리</td>
+                <td class = 'edit'><i><a href = "#">Add</a></i></td>
+                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+            </Tr>
+            <Tr>
+                <td>
+                    <b><i><a Href = "">Photo</a></i></b>
+                </td>
+                <td>우짜리</td>
+                <td class = 'edit'><i><a href = "#">Add</a></i></td>
+                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+            </Tr>
+            </tbody>
+        </table>
+
+        </div>
+{% endblock %}
+
+{% block footer %}
+        <div id = 'footer'>
+        &copy; PURRED 2017
+        </div>
+{% endblock %}
