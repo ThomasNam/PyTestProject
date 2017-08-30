@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',     # BookMark App 추가
     'blog.apps.BlogConfig',             # Blog App 추가
+    'tagging.apps.TaggingConfig'        # Tagging...
 ]
 
 MIDDLEWARE = [
