@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',             # Blog App 추가
     'tagging.apps.TaggingConfig',        # Tagging...
     'disqus',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    'photo.apps.PhotoConfig'
 ]
 
 DISQUS_WEBSITE_SHORTNAME = 'purred'
