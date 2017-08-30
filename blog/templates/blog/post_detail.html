@@ -47,6 +47,11 @@
     <a href = "{% url 'blog:tag_cloud' %}"><i>[ TagCloud ]</i></a>
     </div>
 
+    <Br/>
+
+    {% load disqus_tags %}
+    {% disqus_show_comments %}
+
     </div>
 
 {% endblock %}

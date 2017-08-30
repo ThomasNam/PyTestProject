@@ -39,8 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',     # BookMark App 추가
     'blog.apps.BlogConfig',             # Blog App 추가
-    'tagging.apps.TaggingConfig'        # Tagging...
+    'tagging.apps.TaggingConfig',        # Tagging...
+    'disqus',
+    'django.contrib.sites'
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'purred'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
