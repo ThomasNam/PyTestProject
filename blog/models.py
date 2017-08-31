@@ -5,6 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.core.urlresolvers import reverse
 from tagging.fields import TagField
 
+
 # Create your models here.
 @python_2_unicode_compatible
 class Post(models.Model) :
