@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Photo Detail{% endblock %}
+
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
+
+{% block content %}
+
+    <div id = 'content'>
+
+    <h2>{{ object.title }}</h2>
+
+    <table class = "photo-detail">
+        <tr>
+            <td>
+                <A href = "{{ object.image.url }}"><img style="max-width:100%" src = '{{ object.image.url }}'  /></A>
+            </td>
+            <td>
+
+                <ul>
+                    <li>Photo Description</li>
+                    {% if object.description %}
+                        <p>{{ object.description|linebreaks }}</p>
+                    {% else %}
+                        <p>(blank</p>
+                    {% endif %}
+                    <li>Date Upload</li>
+                <p>{{ object.update_date }}</p>
+                <li>Alnum name</li>
+                <p>
+                    <a href = "{% url 'photo:album_detail' object.album.id %}">{{ object.album.name }}</a>
+                </p>
+                </ul>
+
+            </td>
+        </tr>
+    </table>
+
+    <h2 style = 'display:inline'><a href = "{% url 'photo:album_detail' object.id %}">{{ object.name }}</a></h2>
+                    &emsp;<b><I>{{ item.description }}</I></b>
+
+    <hr>
+
+    <div class = "album-detail">
+                {% for photo in object.photo_set.all|slice:":5" %}
+
+                    <div class = "album-detail-photo">
+                        <a href = "{{ photo.get_absolute_url }}"><img class = "thumbnail" src = "{{ photo.image.thumb_url }}" /></a>
+                    <li>{{ photo.title }}</li>
+                    <li>{{ photo.update_date|date:"Y-m-d" }}</li>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+    </div>
+
+{% endblock %}
