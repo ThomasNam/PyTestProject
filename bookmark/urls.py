@@ -7,6 +7,6 @@ urlpatterns = [
 
     url(r'^add/$', BookmarkCreateView.as_view(), name="add"),
     url(r'^change/$', BookmarkChangeLV.as_view(), name="change"),
-    url(r'^update/$', BookmarkUpdateView.as_view(), name="update"),
+    url(r'^(?P<pk>\d+)/update/$', BookmarkUpdateView.as_view(), name="update"),
     url(r'^(?P<pk>\d+)/delete/$', BookmarkDeleteView.as_view(), name="delete"),
 ]

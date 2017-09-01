@@ -89,7 +89,7 @@ class PostCreateView(LoginRequiredMixin, CreateView) :
     model = Post
     fields = ['title', 'slug', 'description', 'content', 'tag']
     initial = {'slug':'auto-filling-do-not-input'}
-    success_url = reverse_lazy('blog_index')
+    success_url = reverse_lazy('blog:index')
 
     def form_valid(self, form):
         form.instance.owner = self.request.user

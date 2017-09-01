@@ -27,13 +27,15 @@ urlpatterns = [
 
     url(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list'),
 
+    url(r'^search/$', SearchFormView.as_view(), name='search'),
+
     url(r'^add/$', PostCreateView.as_view(), name='add'),
 
     url(r'^change/$', PostChangeLV.as_view(), name='change'),
 
-    url(r'^(?P<pk>)\d+/update/$', PostUpdateView.as_view(), name='update'),
+    url(r'^(?P<pk>\d+)/update/$', PostUpdateView.as_view(), name='update'),
 
-    url(r'^(?P<pk>)\d+/delete/$', PostDeleteView.as_view(), name='delete'),
+    url(r'^(?P<pk>\d+)/delete/$', PostDeleteView.as_view(), name='delete'),
 
 
 ]

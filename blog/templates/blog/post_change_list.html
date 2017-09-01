@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Bookmark Change List{% endblock %}
+
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+    <div id = 'content'>
+
+        <h1>Post Change = {{ user }}</h1>
+
+        <table class = "charge-list">
+            <tr>
+                <Th>Title</Th>
+                <th>Description</th>
+                <th>Owner</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for item in object_list %}
+            <Tr>
+                <Td>{{ item.title }}</Td>
+                <Td>{{ item.description }}</Td>
+                <Td>{{ item.owner }}</Td>
+                <Td><a href = "{% url 'blog:update' item.id %}">Update</a></Td>
+                <Td><a href = "{% url 'blog:delete' item.id %}">Delete</a></Td>
+            </Tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

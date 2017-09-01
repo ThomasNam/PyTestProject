@@ -116,3 +116,7 @@ td, th {
     vertical-align: top;
     padding: 5px 15px;
 }
+
+table.charge-list, table.charge-list th, table.charge-list td {
+    border: 1px solid #ccc;
+}
