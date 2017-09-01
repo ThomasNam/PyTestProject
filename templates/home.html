@@ -24,24 +24,24 @@
                     <b><i><a Href = "{% url 'bookmark:index' %}">Bookmark</a></i></b>
                 </td>
                 <td>우짜리</td>
-                <td class = 'edit'><i><a href = "#">Add</a></i></td>
-                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'bookmark:add' %}">Add</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'bookmark:change' %}">Change</a></i></td>
             </Tr>
             <Tr>
                 <td>
                     <b><i><a Href = "{% url 'blog:index' %}">Blog</a></i></b>
                 </td>
                 <td>우짜리</td>
-                <td class = 'edit'><i><a href = "#">Add</a></i></td>
-                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'blog:add' %}">Add</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'blog:change' %}">Change</a></i></td>
             </Tr>
             <Tr>
                 <td>
                     <b><i><a Href = "{% url 'photo:index' %}">Photo</a></i></b>
                 </td>
                 <td>우짜리</td>
-                <td class = 'edit'><i><a href = "#">Add</a></i></td>
-                <td class = 'edit'><i><a href = "#">Change</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'photo:album_add' %}">Add</a></i></td>
+                <td class = 'edit'><i><a href = "{% url 'photo:album_change' %}">Change</a></i></td>
             </Tr>
             </tbody>
         </table>

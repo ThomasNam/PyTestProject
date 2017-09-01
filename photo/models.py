@@ -5,12 +5,15 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.core.urlresolvers import reverse
 from photo.fields import ThumbnailImageField
 
+from django.contrib.auth.models import User
 
 @python_2_unicode_compatible
 class Album(models.Model) :
     name = models.CharField(max_length=50)
 
     description = models.CharField('One Line Description', max_length=100, blank=True)
+
+    owner = models.ForeignKey(User, null=True)
 
     class Meta:
         ordering = ['name']
@@ -31,6 +34,8 @@ class Photo(models.Model) :
 
     description = models.TextField('Photo Description', blank=True)
     update_date = models.DateTimeField('Update date', auto_now_add=True)
+
+    owner = models.ForeignKey(User, null=True)
 
     class Meta:
         ordering = ['title']

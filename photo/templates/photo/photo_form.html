@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}BookForm{% endblock %}
+
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+    <div id = 'content'>
+
+        <h1>Photo Create or Update Form</h1>
+
+    {% if form.is_multipart  %}
+    <form action = "." method = "post" enctype="multipart/form-data">
+    {% else %}
+    <form action = "." method = "post">
+    {% endif %}
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <p class = 'errornote'>Wrong! Plase correct the error(s) below</p>
+    {% endif %}
+
+
+
+    <fieldset class="aligned">
+
+        <div class = "form-row">
+            {{ form.image.label_tag }} {{ form.image }}
+        </div>
+
+        <div class = "form-row">
+            {{ form.album.label_tag }} {{ form.album }}
+            <button type = "button"><a href = "{% url "photo:album_add" %}">Add Album</a></button>
+        </div>
+
+        <div class = "form-row">
+            {{ form.title.label_tag }} {{ form.title}}
+        </div>
+
+        <div class = "form-row">
+            {{ form.description.label_tag }} {{ form.description }}
+        </div>
+
+    </fieldset>
+
+    <div class = "submit-row">
+        <input type = "submit" value = "Submit" />
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("id_album").focus ();
+    </script>
+
+    </form>
+
+    </div>
+
+{% endblock %}
