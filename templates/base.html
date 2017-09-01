@@ -14,7 +14,12 @@
     <div id = 'header'>
 
         <h2 class = 'maintitle'>Web Programming</h2>
-        <h4 class = 'welcome'>Welcome, <a href = '#'>PURRED</a> / <a href = "#">패스워드 변경</a> / <a href = "#">Logout</a></h4>
+
+        {% if user.is_active %}
+            <h4 class = 'welcome'>Welcome, <a href = '#'>PURRED</a> / <a href = "#">패스워드 변경</a> / <a href = "#">Logout</a></h4>
+        {% else %}
+            <h4 class = 'welcome'>Welcome, Anonymous / <a href = "{% url 'login' %}">Login</a></h4> / <a href = "{% url 'register' %}">Register</a></h4>
+        {% endif %}
 
     </div>
 
