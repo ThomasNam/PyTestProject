@@ -45,3 +45,31 @@ class Photo(models.Model) :
 
     def get_absolute_url (self) :
         return reverse("photo:photo_detail", args=(self.id, ))
+
+
+
+@python_2_unicode_compatible
+class Publication(models.Model) :
+    title = models.CharField(max_length=30)
+    albums = models.ManyToManyField(Album)
+
+
+@python_2_unicode_compatible
+class Place(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=80)
+
+    def __str__(self):
+        return "%s the place" % self.name
+
+@python_2_unicode_compatible
+class Restaurant(models.Model):
+    place = models.OneToOneField(Place)
+
+    name = models.CharField(max_length=80, default="DefRestName")
+
+    services_pizza = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "%s the restaurant" % self.name
+
